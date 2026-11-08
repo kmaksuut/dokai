@@ -575,7 +575,9 @@ pub fn run() {
         .plugin(tauri_plugin_opener::init())
         .setup(|app| {
             if let Some(window) = app.get_webview_window("main") {
-                if let Some(icon) = app.default_window_icon() {
+                if let Ok(icon) = tauri::image::Image::from_bytes(include_bytes!("../icons/128x128.png")) {
+                    let _ = window.set_icon(icon);
+                } else if let Some(icon) = app.default_window_icon() {
                     let _ = window.set_icon(icon.clone());
                 }
             }
