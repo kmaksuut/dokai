@@ -1,6 +1,7 @@
 use std::fs;
 use std::process::Command;
 use std::time::Instant;
+use tauri::Manager;
 
 #[derive(serde::Serialize)]
 pub struct CodeExecutionResult {
@@ -572,6 +573,14 @@ fn install_toolchain(winget_id: String) -> Result<String, String> {
 pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
+        .setup(|app| {
+            if let Some(window) = app.get_webview_window("main") {
+                if let Some(icon) = app.default_window_icon() {
+                    let _ = window.set_icon(icon.clone());
+                }
+            }
+            Ok(())
+        })
         .invoke_handler(tauri::generate_handler![execute_code, install_toolchain])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
