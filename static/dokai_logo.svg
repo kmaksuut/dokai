@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Ambient Glow -->
+    <radialGradient id="dokai-ambient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.25" />
+      <stop offset="60%" stop-color="#38BDF8" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#09090B" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Primary Document Gradient (Cyan to Indigo to Violet) -->
+    <linearGradient id="dokai-primary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+
+    <!-- AI Sparkle Core Gradient -->
+    <linearGradient id="dokai-sparkle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F472B6" />
+      <stop offset="50%" stop-color="#EC4899" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+
+    <!-- Glass Sheet Gradient -->
+    <linearGradient id="dokai-sheet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Deep Drop Shadow -->
+    <filter id="dokai-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#6366F1" flood-opacity="0.38" />
+    </filter>
+
+    <!-- Luminous Sparkle Glow -->
+    <filter id="dokai-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Ambient Glow Backdrop -->
+  <circle cx="256" cy="256" r="230" fill="url(#dokai-ambient)" />
+
+  <!-- Background Offset Document Page (Layering Effect) -->
+  <rect x="150" y="100" width="220" height="300" rx="28" fill="#18181B" stroke="#27272A" stroke-width="3" transform="rotate(7 260 250)" opacity="0.65" />
+
+  <!-- Main Technical Document Container -->
+  <g filter="url(#dokai-shadow)">
+    <!-- Document Body with Folded Header Geometry -->
+    <path d="M 140 108 
+             C 140 92.536, 152.536 80, 168 80 
+             L 286 80 
+             L 364 158 
+             L 364 396 
+             C 364 411.464, 351.464 424, 336 424 
+             L 168 424 
+             C 152.536 424, 140 411.464, 140 396 
+             Z" 
+          fill="url(#dokai-sheet)" 
+          stroke="url(#dokai-primary)" 
+          stroke-width="8" 
+          stroke-linejoin="round" />
+
+    <!-- Corner Fold Flap -->
+    <path d="M 286 80 
+             L 286 142 
+             C 286 150.837, 293.163 158, 302 158 
+             L 364 158 
+             Z" 
+          fill="url(#dokai-primary)" 
+          opacity="0.95" />
+
+    <!-- Code Line Stripes / Technical Document Schematics -->
+    <line x1="192" y1="210" x2="252" y2="210" stroke="#38BDF8" stroke-width="7" stroke-linecap="round" opacity="0.9" />
+    <line x1="192" y1="254" x2="310" y2="254" stroke="#818CF8" stroke-width="7" stroke-linecap="round" opacity="0.75" />
+    <line x1="192" y1="298" x2="280" y2="298" stroke="#A78BFA" stroke-width="7" stroke-linecap="round" opacity="0.6" />
+    <line x1="192" y1="342" x2="236" y2="342" stroke="#38BDF8" stroke-width="7" stroke-linecap="round" opacity="0.4" />
+  </g>
+
+  <!-- High-Energy AI Primary Sparkle -->
+  <g transform="translate(346, 326)" filter="url(#dokai-glow)">
+    <path d="M 0 -54 
+             C 0 -12, 12 0, 54 0 
+             C 12 0, 0 12, 0 54 
+             C 0 12, -12 0, -54 0 
+             C -12 0, 0 -12, 0 -54 Z" 
+          fill="url(#dokai-sparkle)" />
+    <!-- Bright White Core -->
+    <circle cx="0" cy="0" r="6" fill="#FFFFFF" />
+  </g>
+
+  <!-- Secondary Satellite Sparkle -->
+  <g transform="translate(390, 246)">
+    <path d="M 0 -22 
+             C 0 -5, 5 0, 22 0 
+             C 5 0, 0 5, 0 22 
+             C 0 5, -5 0, -22 0 
+             C -5 0, 0 -5, 0 -22 Z" 
+          fill="#38BDF8" 
+          opacity="0.95" />
+    <circle cx="0" cy="0" r="3" fill="#FFFFFF" />
+  </g>
+
+  <!-- Micro Orbit Particle -->
+  <circle cx="316" cy="386" r="4" fill="#F472B6" opacity="0.8" />
+</svg>

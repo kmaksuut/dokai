@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+bun.lockb
+
+# SvelteKit & Vite Build Outputs
+/build/
+/.svelte-kit/
+/package/
+dist/
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Rust & Tauri Builds
+target/
+src-tauri/target/
+src-tauri/gen/schemas/
+
+# Environment, secrets & local keys (Strictly prevent API key leaks)
+.env
+.env.*
+!.env.example
+*.local
+*.pem
+*.key
+*.cert
+*.secrets
+secrets/
+
+# IDE & Editor files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
