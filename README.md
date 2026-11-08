@@ -16,18 +16,21 @@
   <img src="https://img.shields.io/badge/License-MIT-green" alt="MIT License" />
 </p>
 
+> [!NOTE]
+> **100% AI-Developed:** This entire project, codebase, and architecture was authored and engineered completely by Artificial Intelligence, powered by **Gemini 3.8 Flash** and **Gemini 4 Argon**.
+
 ---
 
 ## ✨ Features
 
-- **100% Local-First & Offline:** All documents, settings, and API keys are stored locally in your browser storage (`localStorage`). Zero external telemetry or tracking.
+- **100% Local-First & Offline:** All documents, settings, and API keys are stored locally in your storage (`localStorage`).
 - **Multi-Tab Workspace:** Chrome-style tabs with smooth bidirectional drag-and-drop reordering.
 - **Docs Drawer & Instant Filter:** Collapsible documents bar with category pills and live full-text search.
 - **Runnable Code Sandboxes:** Test and execute code directly inside documentation across multiple programming languages.
 - **Winget Auto-Installer:** Detects missing compilers/runtimes and provides one-click native installation via Windows Package Manager.
 - **AI Documentation Suite:**
   - **Generator:** Creates structured, multi-section guides with strict Markdown fidelity.
-  - **Enhancer:** Enhances single sections or entire documents with deep code examples and security considerations.
+  - **Enhancer:** Enhances single sections or entire documents with deep code examples.
   - **Auditor:** Scans documents for technical inaccuracies, scores health (0-100), and suggests fixes.
 - **Background Tasks Queue:** Non-blocking async AI tasks with live progress indicators and automatic cleanup.
 - **Universal Typography & Themes:** Use any system font, Google Font, or local font file (`.woff2`, `.ttf`) with OLED True Black theme.
@@ -52,11 +55,10 @@
 ## 🤖 Supported AI Providers
 
 DokAI connects directly via client-side HTTPS to official LLM endpoints:
-- **Google Gemini:** `gemini-2.5-flash`, `gemini-2.5-pro`
-- **Anthropic Claude:** `claude-3-5-sonnet`, `claude-3-haiku`
-- **OpenAI:** `gpt-4o`, `gpt-4o-mini`, `o1`
-- **OpenRouter:** Any open-source or commercial model ID (DeepSeek, Llama 3, Mistral, etc.)
-- **Custom Model ID:** Enter any specific model ID directly in Settings.
+- **Google Gemini**
+- **Anthropic Claude**
+- **OpenAI**
+- **OpenRouter**
 
 ---
 
@@ -88,16 +90,6 @@ DokAI provides one-click export and flexible import:
       "content": "## 1. Threads\n\n```rust\nuse std::thread;\nfn main() {\n    thread::spawn(|| println!(\"Worker thread\")).join().unwrap();\n}\n```"
     }
   ]
-}
-```
-
-### Full Library Backup JSON Structure
-```json
-{
-  "app": "DokAI",
-  "version": "1.0.0",
-  "exportedAt": "2026-11-09T00:00:00.000Z",
-  "documents": [ /* Array of document objects */ ]
 }
 ```
 
@@ -180,14 +172,6 @@ bun run check
 # Build desktop release installer (.exe / .msi)
 bun run tauri build
 ```
-
----
-
-## 🔒 Privacy & Security
-
-- **Zero Cloud Storage:** Your notes and documents never leave your machine.
-- **Direct HTTPS Calls:** LLM API keys are stored solely in your local storage and sent directly to the official provider endpoint.
-- **Git Protected:** Sensitive files (`.env*`, `target/`, `node_modules/`) are strictly excluded in `.gitignore`.
 
 ---
 
